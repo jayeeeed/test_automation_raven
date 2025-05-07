@@ -1,0 +1,8 @@
+__pycache__/
+.pytest_cache/
+.venv/
+.env.prod
+reports/
+*.png
+trace.zip
+allure-results/
