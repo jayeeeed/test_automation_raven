@@ -18,4 +18,4 @@ def login(browser_context):
     page.goto(f"{base_url}")
     login_page.login(email, password)
     page.wait_for_url(f"{base_url}/dashboard")
-    login_page.change_team(team)
+    # login_page.change_team(team)

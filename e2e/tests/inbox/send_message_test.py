@@ -1,7 +1,7 @@
 import allure
 import pytest
 from pytest_bdd import given, when, then, scenario, parsers
-from tests.base_test import login
+from tests.base_test import *
 from pages.inbox.chatbox_page import ChatboxPage
 
 

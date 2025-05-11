@@ -5,23 +5,12 @@ class LoginPage:
     def __init__(self, page: Page):
         self.page = page
 
-        self.email_input = 'input[id="email"]'
-        self.password_input = 'input[id="password"]'
-        self.login_button = 'button[data-testid="button-element"]'
-
-    def enter_email(self, email: str):
-        self.page.fill(self.email_input, email)
-
-    def enter_password(self, password: str):
-        self.page.fill(self.password_input, password)
-
-    def click_login(self):
-        self.page.click(self.login_button)
-
     def login(self, email: str, password: str):
-        self.enter_email(email)
-        self.enter_password(password)
-        self.click_login()
+        # self.page.get_by_role("button", name="Continue with Google").click()
+        # self.page.get_by_role("textbox", name="Email or phone").fill(email)
+        # self.page.get_by_role("textbox", name="Enter your password").fill(password)
+        # self.page.get_by_text("Next").click()
+        pass
 
     def change_team(self, team: str):
         self.page.wait_for_timeout(3000)
