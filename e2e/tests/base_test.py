@@ -11,11 +11,8 @@ def login(browser_context):
     base_url = config["base_url"]
     email = login_data["email"]
     password = login_data["password"]
-    team = config["team"]
 
     login_page = LoginPage(page)
 
     page.goto(f"{base_url}")
     login_page.login(email, password)
-    page.wait_for_url(f"{base_url}/dashboard")
-    login_page.change_team(team)

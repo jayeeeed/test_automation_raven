@@ -5,7 +5,7 @@ from playwright.sync_api import sync_playwright
 class PlaywrightManager:
     def __init__(
         self,
-        headless: bool = True,
+        headless: bool = False,
         no_viewport: bool = True,
         trace_path: str = "trace.zip",
     ):

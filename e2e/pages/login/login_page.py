@@ -22,9 +22,3 @@ class LoginPage:
         self.enter_email(email)
         self.enter_password(password)
         self.click_login()
-
-    def change_team(self, team: str):
-        self.page.wait_for_timeout(3000)
-        self.page.get_by_alt_text("team_avatar").click()
-        self.page.locator("#menuModal").get_by_text(team).click()
-        self.page.wait_for_timeout(3000)

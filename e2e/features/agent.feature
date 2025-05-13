@@ -4,22 +4,17 @@ Feature: Agent
     I should be able to create and coonect an agent to a channel.
 
 
-    @create-agent
+    @create
     Scenario: Create Agent
         Given I am logged in to the application
 
-        When I click on the create agent button
-        And Step 1: I create an agent name "API Agent"
+        When I create an custom agent "Agent1" with description "test agent"
+        And I should able to connect to a channel
 
-        When I click on the save button
-        And Step 2: I create 2 API tools
+        Then I create an custom agent "Agent2" with description "test agent"
+        And I should able to connect to previous channel
 
-        When I click on the save button
-        And Step 3: I send a message "Hello"
-
-        When I click the next button
-        And Step 4: I connect the agent to "raven"
-
-        When I click the Goto main page button
-        Then I should see agent on the main page
+        Then I should able to see a warning message
+        And I should able to connect channel to "Agent2"
+        And I should able to see both agents on dashboard
         
