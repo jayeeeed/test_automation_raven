@@ -7,19 +7,19 @@ class CreateAgentPage:
         self.page = page
 
     def create_agent(self, name: str, description: str):
-        self.page.get_by_role("link", name="Crate Custom Agent")
+        self.page.locator("//div[2]/a/span").click()
         self.page.get_by_role("textbox", name="Name of your agent").fill(name)
         self.page.get_by_role("textbox", name="What your agent will do?").fill(
             description
         )
         self.page.get_by_role("button", name="Save & Continue").click()
 
-    def ticket_tool(self, tool_info: str):
+    def ticket_tool(self):
         self.page.get_by_role("button", name="Add Action").click()
         self.page.get_by_role("button", name="Assign Ticket").click()
         self.page.get_by_role(
             "textbox", name="When this action will be triggered?"
-        ).fill(tool_info)
+        ).fill("test tool")
         self.page.get_by_role("combobox", name="Assign to agent or group *").click()
         self.page.get_by_text("Jayed Raven").click()
         self.page.get_by_role("button", name="Save & Continue").click()
@@ -29,6 +29,8 @@ class CreateAgentPage:
 
     def deploy_agent(self):
         self.page.locator("//div[1]/button/span").click()
-        expect(self.page.locator("//div[1]/button/span")).to_have_class(
-            "data-[state=checked]"
+        expect(self.page.locator("//div[1]/button/span")).to_have_attribute(
+            "data-state", "checked"
         )
+        self.page.get_by_role("button", name="Go to Main Page").click()
+        self.page.get_by_role("button", name="Activate Now").click()

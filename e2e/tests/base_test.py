@@ -16,3 +16,14 @@ def login(browser_context):
 
     page.goto(f"{base_url}")
     login_page.login(email, password)
+
+
+def dummy_obj(browser_context):
+    page = browser_context
+
+    config = load_config()
+    base_url = config["base_url"]
+
+    LoginPage(page)
+
+    page.goto(f"{base_url}")
