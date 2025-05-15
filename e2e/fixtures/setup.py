@@ -23,7 +23,7 @@ class PlaywrightManager:
             user_data_dir=self.user_data_dir,
             headless=self.headless,
             args=["--disable-blink-features=AutomationControlled"],
-            viewport={"width": 1280, "height": 720},
+            viewport={"width": 1366, "height": 768},
             user_agent=(
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
                 "AppleWebKit/537.36 (KHTML, like Gecko)"

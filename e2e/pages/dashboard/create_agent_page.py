@@ -36,3 +36,8 @@ class CreateAgentPage:
     def deploy_agent(self):
         self.page.get_by_role("button", name="Go to Main Page").click()
         self.page.get_by_role("button", name="Activate Now").click()
+
+    def swap_warning(self):
+        warning = self.page.get_by_role("button", name="Connect")
+        expect(warning).to_be_visible()
+        warning.click()

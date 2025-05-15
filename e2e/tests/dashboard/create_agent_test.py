@@ -52,13 +52,14 @@ def create_agent2(page, name, description):
 def connect_channel1(page):
     create_agent_page = CreateAgentPage(page)
     create_agent_page.connect_channel()
-    create_agent_page.deploy_agent()
 
 
 @then("I should see a warning message and accept it")
 @allure.step("See a warning message")
-def swap_channel(page):
-    pass
+def swap_warning(page):
+    create_agent_page = CreateAgentPage(page)
+    create_agent_page.swap_warning()
+    create_agent_page.deploy_agent()
 
 
 @then("I should able to see both agents on dashboard")
