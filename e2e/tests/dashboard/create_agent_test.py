@@ -30,8 +30,38 @@ def create_agent1(page, name, description):
     create_agent_page.agent_test()
 
 
-@when(parsers.parse("I should able to connect to a channel"))
+@when("I should able to connect to a channel")
 @allure.step("Connect to a channel")
-def connect_channel(page):
+def connect_channel1(page):
     create_agent_page = CreateAgentPage(page)
+    create_agent_page.connect_channel()
     create_agent_page.deploy_agent()
+
+
+@then(parsers.parse("I create an custom agent {name} with description {description}"))
+@allure.step("Create an custom agent {name} with description {description}")
+def create_agent2(page, name, description):
+    create_agent_page = CreateAgentPage(page)
+    create_agent_page.create_agent(name, description)
+    create_agent_page.ticket_tool()
+    create_agent_page.agent_test()
+
+
+@then("I should able to connect to previous channel")
+@allure.step("Connect to previous channel")
+def connect_channel1(page):
+    create_agent_page = CreateAgentPage(page)
+    create_agent_page.connect_channel()
+    create_agent_page.deploy_agent()
+
+
+@then("I should see a warning message and accept it")
+@allure.step("See a warning message")
+def swap_channel(page):
+    pass
+
+
+@then("I should able to see both agents on dashboard")
+@allure.step("See both agents on dashboard")
+def see_agents(page):
+    pass

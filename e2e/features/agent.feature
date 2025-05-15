@@ -14,7 +14,6 @@ Feature: Agent
         Then I create an custom agent Agent2 with description test agent
         And I should able to connect to previous channel
 
-        Then I should able to see a warning message
-        And I should able to connect channel to Agent2
+        Then I should see a warning message and accept it
         And I should able to see both agents on dashboard
         

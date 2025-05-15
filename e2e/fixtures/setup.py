@@ -25,9 +25,9 @@ class PlaywrightManager:
             args=["--disable-blink-features=AutomationControlled"],
             viewport={"width": 1280, "height": 720},
             user_agent=(
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/120.0.0.0 Safari/537.36"
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+                "AppleWebKit/537.36 (KHTML, like Gecko)"
+                "Chrome/136.0.0.0 Safari/537.36"
             ),
             color_scheme="dark",
         )

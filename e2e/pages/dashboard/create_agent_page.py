@@ -27,10 +27,12 @@ class CreateAgentPage:
     def agent_test(self):
         self.page.get_by_role("button", name="Next").click()
 
-    def deploy_agent(self):
+    def connect_channel(self):
         self.page.locator("//div[1]/button/span").click()
         expect(self.page.locator("//div[1]/button/span")).to_have_attribute(
             "data-state", "checked"
         )
+
+    def deploy_agent(self):
         self.page.get_by_role("button", name="Go to Main Page").click()
         self.page.get_by_role("button", name="Activate Now").click()
